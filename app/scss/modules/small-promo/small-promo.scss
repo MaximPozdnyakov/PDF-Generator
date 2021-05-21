@@ -1,0 +1,33 @@
+.small-promo{
+    background-color: $dark;
+    color: $white;
+    h2{
+        font-weight: 400;
+        font-size: 1.063rem;
+        color: $white;
+        margin-bottom: 0;
+    }
+    @include icon(invoice, 32px, 32px, $blue);
+    .icon-invoice{
+        stroke: $blue;
+    }
+    .counter {
+        display: inline-block;
+        width: 3rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .small-promo{
+        h2 {
+            font-size: 1.556rem;
+        }
+        .icon-invoice{
+            width: 40px;
+            height: 40px;
+        }
+        .counter {
+            width: 4rem;
+        }
+    }
+}

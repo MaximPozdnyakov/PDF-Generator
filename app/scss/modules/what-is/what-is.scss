@@ -1,0 +1,28 @@
+.what-is{
+    margin-bottom: 1.5rem;
+    h2 {
+        padding-top: 2.25rem;
+        padding-bottom: 1.125rem;
+    }
+    img {
+        max-width: 100%;
+        margin-bottom: 4rem;
+    }
+    ul {
+        list-style: none;
+        position: relative;
+        margin-top: 2rem;
+        padding: 0;
+        li {
+            position: relative;
+            padding: 0 0 30px 65px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) { 
+    margin-bottom: 4rem;
+    h2 {
+        padding-top: 4rem;
+    }
+}

@@ -1,0 +1,165 @@
+.modal {
+    &.contact{
+        h2 {
+            color: $blue;
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        form{
+            transition: all 125ms ease-in;
+            opacity: 1;
+            visibility: visible;
+            input, .input-group-text, select {
+                background-color: $grey-light;
+                font-size: 1.125rem;
+            }
+            .input-group-text, select {
+                font-weight: 500;
+            }
+            &.hide{
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
+        }
+        .result {
+            padding-top: .5rem;
+            padding-bottom: 2rem;
+            font-size: 1.125rem;
+            p{
+                margin-bottom: .1rem;
+                letter-spacing: -0.02rem;
+            }
+            .data{
+                font-weight: 700;
+                color: $green;
+            }
+            .focus{
+                font-weight: 700;
+                color: $blue;
+            }
+        }
+        .company{
+            padding-bottom: 1.5rem;
+        }
+        .client{
+            padding-bottom: .5rem;
+        }
+        .btn{
+            float: right;
+            margin-bottom: 4rem;
+            &.btn-xl {
+                padding: 1.1rem 2.325rem;
+            }
+        }
+        .success{
+            position: fixed;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            overflow: hidden;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 125ms ease-in;
+            opacity: 0;
+            visibility: hidden;
+            &.show{
+                opacity: 1;
+                visibility: visible;
+            }
+            .circle {
+                @include icon(arrow-down, 38px, 28px, $white);
+                width: 80px;
+                height: 80px;
+                background-color: $green;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            h2{
+                margin-top: 1rem;
+                color: $dark;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .modal {
+        &.contact{
+            .modal-dialog{
+                max-width: 688px;
+                .container{
+                    max-width: 588px;
+                }
+            }
+            form{
+                &.hide{
+                    height: 100%;
+                    width: 100%;
+
+                }
+            }
+            .success{
+                position: absolute;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .modal {
+        &.contact{
+            h2{
+                font-size: 1.333rem;
+                margin-bottom: 0.889rem;
+            }
+            form{
+                input, .input-group-text, select {
+                    background-color: $grey-light;
+                    font-size: 1rem;
+                }
+                .form-group {
+                    margin-bottom: 0.889rem;
+                }
+            }
+            .client{
+                .col-12{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+            .result{
+                font-size: 1.111rem;
+                .col-3{
+                    flex: 0 0 18%;
+                    max-width: 18%; 
+                }
+                .col-9{
+                    flex: 0 0 82%;
+                    max-width: 82%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+            .btn{   
+                &.btn-xl {
+                    padding: .978rem 2.575rem;
+                }
+            }
+        }
+    }
+}

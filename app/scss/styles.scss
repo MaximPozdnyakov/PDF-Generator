@@ -1,0 +1,330 @@
+@import './utils/libs.scss';
+@import './utils/fonts.scss';
+
+//Default Colors
+
+$white: #fff;
+$black: #000;
+$dark: #222244;
+$dark-100: #1F3A76;
+$green: #2BC96D;
+$blue: #007BE4;
+$blue-100: #0089FF;
+$blue-light: #CCE7FF;
+$blue-lighter: #F5FAFF;
+$yellow: #FFDC70;
+$grey: #4F4F4F;
+$grey-text: #7F7F8B;
+$grey-mid: #D7D7DA;
+$grey-border: #e9e9ec;
+$grey-light: #F8F8F8;
+$purple: #835eff;
+$red: #F05A5C;
+
+
+//Button colors
+
+$green-button: $green;
+$green-button-hover: #45d481;
+
+//Default sizes
+
+$mobile-header-height: 56px;
+$header-height: 86px;
+
+//Default Styles
+
+html, body {
+    width: 100%;
+    font-family: 'Cera Pro';
+    font-size: 16px;
+}
+
+body {
+    min-height: 320px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    position: relative;
+}
+
+h1 {
+    color: $white;
+}
+
+h2, h3 {
+    color: $dark;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+a {
+    color: $blue;
+}
+
+ul {
+    &.ticks{
+        list-style: none;
+        margin-top: 3rem;
+        margin-bottom: 1.125rem;
+        padding: 0;
+        li{
+            position: relative;
+            padding: 0 0 30px 65px;
+        }
+        position: relative;
+    }
+}
+
+.card {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-width: 0;
+    box-shadow: 0 4px 25px rgba(140,152,164,.1);
+    border: .0rem solid $grey-light;
+    border-radius: .375rem;
+    overflow: hidden;
+    h4 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+        padding-bottom: 1rem;
+        color: $blue;
+    }
+    ul {
+        font-size: .875rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            padding-bottom: .5rem;
+        }
+    }
+    a {
+        color: $grey-text;
+    }
+    &.card-border::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        border-top-width: 2px;
+        border-bottom-width: calc(.375rem - 2px);
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: inherit;
+        border-bottom-color: transparent;
+        border-top-left-radius: .375rem;
+        border-top-right-radius: .375rem;
+    }
+    &.border-green {
+        border-color: $green;
+    }
+    &.border-blue {
+        border-color: $blue;
+    }
+    &.shadow-lg{
+        box-shadow: 0 1.5rem 4rem rgba(140,152,164,.1);
+    }
+}
+
+.table{
+    thead>tr>th {
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        &.highlight {
+            border-radius: .75rem .75rem 0 0;
+        }
+    }
+    thead{
+        th {
+            border-bottom: 2px solid #f1f4f8;
+        }
+    }
+    td, th {
+        border-bottom: 1px solid #f1f4f8;
+        &.highlight {
+            background: $blue-lighter;
+            &.green {
+                background: $green;
+                color: $white;               
+            }
+            &.green-light {
+                background: #2bc96d0a;
+            }
+        }
+    }
+}
+
+//Additional Paddings
+
+.pt-6 {
+    padding-top: $spacer * 4;
+}
+
+//Additional Margins
+
+.mb-6 {
+    margin-bottom: $spacer * 4;
+}
+
+//Additional media queries
+
+@media (min-width: 1280px) { 
+    .container {
+        max-width: 1270px;
+    }
+}
+
+//Mixin tools
+
+@mixin icon($name, $width, $height, $fill) {
+	.icon-#{$name} {
+        position: relative;
+        display: inline-block;
+        width: $width;
+        height: $height;
+        fill: $fill;
+	}
+}
+
+@mixin menu-button($name, $width, $height, $margin-top, $fill) {
+    .#{$name} {
+        cursor: pointer;
+        color: inherit;
+        font: inherit;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        &:focus{
+            outline: none;
+        }
+        .icon-#{$name}{
+            position: relative;
+            width: $width;
+            height: $height;
+            fill: $fill;
+            margin-top: $margin-top;
+        }
+    }
+}
+
+// Animation tools
+
+@keyframes fade_in_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade_in_hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+// Media queries
+
+@include media-breakpoint-up(md) {
+    h1 {
+        font-size: 3.111rem;
+    }
+    h2, h3 {
+        font-size: 2.222rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html, body {
+        font-size: 18px;
+    }
+}
+
+// 48 icons
+
+.icon-48 {
+    display: inline-block;
+    fill: $dark;
+    height: 48px;
+    transition: fill 75ms ease-in-out, stroke 75ms ease-in-out;
+    vertical-align: middle;
+    width: 48px;
+    &.white {
+        fill: $white;
+    }
+    &.blue{
+        fill: $blue;
+    }
+    &.green{
+        fill: $green;
+    }
+    &.purple{
+        fill: $purple;
+    }
+
+}
+
+// Additional icons
+
+.icon {
+    &.small {
+        height: 18px;
+        stroke-width: 2;
+        width: 18px;
+    }
+    &.blue {
+        fill: $blue;
+        stroke: $blue;
+    }
+    &.white {
+        fill: $white;
+        stroke: $white;
+    }
+    &.blue-white {
+        fill: $blue;
+        stroke: $white;
+    }
+}
+
+// icons
+
+@include icon(tick, 32px, 32px, $dark);
+
+@include icon(linkedin, 24px, 24px, #0A66C2);
+@include icon(facebook, 24px, 24px, #0A66C2);
+@include icon(twitter, 24px, 24px, #0A66C2);
+// circle icons
+
+.circle-icon {
+    background: $blue;
+    border-radius: 50%;
+    height: 40px;
+    left: 0;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    width: 40px;
+    &.green {
+        background: $green;
+    }
+    .icon {
+       
+        width: 18px;
+        height: 18px;
+    }
+}
+@import "modules/modules";

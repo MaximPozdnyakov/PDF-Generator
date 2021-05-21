@@ -1,0 +1,49 @@
+.footer-pdf{
+    .container{
+        padding: 0 45px 0 40px;
+    }
+    .footer-nav{
+        &__list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+            li{
+                &:last-of-type{
+                    text-align: right;
+                    padding-right: 2px;
+                }
+            }
+        }
+        a{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            line-height: 24px;
+            letter-spacing: .1px;
+            color: $white;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.footer-page{
+    max-width: 595px;
+    margin: 0 auto;
+    .container {
+        padding: 0 40px;
+    }
+    .footer-nav{
+        padding-top: 7px;
+        border-top: 1px solid $blue-100;
+        a{
+            font-size: 11px;
+            line-height: 24px;
+            color: $dark;
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}

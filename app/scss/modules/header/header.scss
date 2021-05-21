@@ -1,0 +1,51 @@
+.header{
+    padding: 42px 0 10px;
+    .navbar-logo{
+        a{
+            width: 200px;
+            height: 36px;
+        }
+        .icon-logo{
+            width: 200px;
+            height: 36px;
+            fill: $white;
+        }
+    }
+    &.header-page{
+        padding: 19px 27px 0 29px;
+        max-width: 595px;
+        margin: 0 auto;
+        .container{
+            padding: 0 11px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 13px;
+            border-bottom: 2px solid $blue-100;
+        }
+        .navbar-logo{
+            img{
+                width: 101px;
+                height: 19px;
+                position: relative;
+                top: -2px;
+            }
+        }
+        .navbar-link{
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 24px;
+            color: $dark;
+            padding-top: 4px;
+            a{
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 24px;
+                color: $dark;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.contact-text{
+    .right{
+        background: url(../images/light-pattern.png),#007bff;
+        color: #fff;
+        h2{
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: $white;
+            opacity: .5;
+        }
+        h3{
+            padding-bottom: 2rem;
+            color: $white;
+            font-weight: 300;
+            font-size: 2rem;
+        }
+        a {
+            color: $white;
+            opacity: .6;
+            &:hover{
+                opacity: 1;
+            }
+        }
+
+        .contacts {
+            padding-bottom: 3rem;
+        }
+
+    }
+    .text-wrap{
+        max-width: 600px;
+    }
+    .left {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@include media-breakpoint-up(md) { 
+    .contact-text{
+        .right{
+         
+            h2{
+                padding-top: 8rem;
+                padding-bottom: 1rem;
+            }
+            h3 {
+                max-width: 500px;
+                padding-bottom: 3rem;
+            }
+            .contacts {
+                padding-bottom: 7rem;
+            }
+            .text-wrap{
+                padding-left: 6rem;
+            }
+        }
+        .left{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            .text-wrap{
+                padding-right: 6rem;
+            }
+        }
+    }
+}

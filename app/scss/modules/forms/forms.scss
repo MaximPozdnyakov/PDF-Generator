@@ -1,0 +1,72 @@
+@include icon(calendar, 22px, 22px, $dark);
+
+form {
+    label {
+        font-size: 0.875rem;
+        font-weight: 500;
+    } 
+    input {
+        border: 1px solid $grey-mid;
+        min-height: 48px;
+        font-weight: 500;
+        font-size: 1.125rem;
+        &.form-control {
+            @extend input;
+        }
+    }
+    select{
+        min-height: 48px;
+    }
+
+    .input-daterange {
+        width: inherit;
+    }
+    .input-group{
+        width: inherit;
+        input {
+            border-width: 1px 0 1px 1px;
+        }
+        .input-group-text {
+            background-color: $white;
+        }
+    }
+    .form-control{
+        &.is-valid {
+            border-color: $green;
+        }
+    }
+    &.was-validated{
+        .form-control{
+            &:valid{
+                border-color: $green;
+            }
+        }
+        .input-group-text{
+            border-color: $green;
+        }
+    }
+    .bootstrap-select {
+        .btn {
+            background-color: $grey-light;
+            font-size: 1rem;
+            text-transform: inherit;
+            border: 1px solid $grey-mid;
+            min-height: 48px;
+            box-shadow: inherit;
+            &:hover{
+                box-shadow: inherit;
+                transform: inherit;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+
+    form {
+        label{
+            font-size: 0.778rem;
+        }
+    }
+
+}

@@ -1,0 +1,105 @@
+.text-section {
+    h2{
+        padding-bottom: 3rem;
+        padding-top: .5rem;
+    }
+    &.section-1 {
+        h2 {
+            font-size: 1.125rem;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            line-height: 2rem;
+        }
+    }
+
+    &.text-section{
+        .heading{  
+            background: url(../images/light-pattern.png),#007bff;
+            box-shadow: 0 5px 5px rgba(182, 182, 182, 0.3);
+            text-align: center;
+            h2{
+                color: $white;
+                padding-top: 1.25rem;
+                padding-bottom: 1rem;
+                font-size: 1.75rem;
+            }
+        }
+        .text{
+            h3 {
+                color: $blue;
+                font-size: 1.75rem;
+                padding-bottom: 1rem;
+            }
+            padding-top: 3.5rem;
+            padding-bottom: 3rem;
+            ul {
+                li {
+                    padding-bottom: .75rem;
+                    ul {
+                        padding-top: .75rem;
+                    }
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+        .table-section {
+            padding-top: 3.5rem;
+            padding-bottom: 3rem;
+            .card {
+                margin-bottom: 0;
+            }
+            .subtext {
+                font-size: .75rem;
+            }
+            .table {   
+                td, th {
+                    text-align: center;
+                    &:first-child {
+                        text-align: left;
+                    }
+                }
+            }
+            img {
+                width: 24px;
+            }
+        }
+        .tabs-wrapper {
+            margin-top: 0;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &.pattern-bg {
+        h2 {
+            color: $blue;
+        }
+        background-color: #f5faff;
+        background-image: url(../images/testimonial-background.png);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+}
+
+@include media-breakpoint-up(md) {
+
+    .text-section{
+        &.pattern-bg {
+            background-size: 50%;
+        }
+    }
+    .invoice-guide {
+
+        &.section-1 {
+            background-size: 50%;
+            h2 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+    }
+
+}

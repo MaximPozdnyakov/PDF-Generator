@@ -1,0 +1,30 @@
+.pdf-attachments{
+  .pdf-title{
+    margin-bottom: 25px;
+  }
+  .attachments-wrap{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .attachments-item{
+    width: 50%;
+    margin-bottom: 46px;
+    &:last-of-type{
+      margin-bottom: 30px;
+    }
+    &__title{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      color: $dark-100;
+      margin-bottom: 8px;
+    }
+    &__media{
+      img{
+        width: 200px;
+        height: 225px;
+      }
+    }
+  }
+}

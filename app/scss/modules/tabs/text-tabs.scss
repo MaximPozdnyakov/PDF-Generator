@@ -1,0 +1,24 @@
+.text-tabs {
+    //background-image: url(../images/pattern_dark_transparent.png);
+    //background-position: center;
+    //background-repeat: repeat;
+    h2{
+        padding-top: 4rem;
+        padding-bottom: 1.125rem;
+    }
+    &.why-choose{
+        background-image: none;
+        background-color: $blue-lighter;
+        h2{
+            color: $blue;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .text-tabs  {
+        h2{
+            padding-top: 6rem;
+        }
+    }
+}

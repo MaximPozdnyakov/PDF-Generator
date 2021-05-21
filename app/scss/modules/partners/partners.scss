@@ -1,0 +1,165 @@
+@mixin partner($name, $width, $height) {
+	&.#{$name} {
+        width: $width;
+        height: $height;
+	}
+}
+
+.partners{
+    h2{
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+        font-size: 1.25rem;
+        padding-bottom: 1rem;
+    }
+    .membership {
+        .logotypes{
+            li {
+                flex: 0 0 33.333%;
+                max-width: 33.333%;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+    .logotypes{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2.5rem;
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex: 0 0 50%;
+            max-width: 50%;
+            min-height: 80px;
+            &.mob-full{
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            img{
+                max-width: 100%;
+                display: block;
+                @include partner(astlanda, 120px, auto);
+                @include partner(nordecon, 126px, auto);
+                @include partner(bonava, 106px, auto);
+                @include partner(riigi-kinnisvara, 148px, auto);
+                @include partner(eesti-teed, 116px, auto);
+                @include partner(tariston, 130px, auto);
+                @include partner(maanteeamet, 136px, auto);
+                @include partner(yit, 97px, auto);
+                @include partner(nobe, 97px, auto);
+                @include partner(coop, 105px, auto);
+                @include partner(olerex, 153px, auto);
+                @include partner(saint-gobain, 107px, auto);
+                @include partner(siemens, 128px, auto);
+                @include partner(selver, 52px, auto);
+                @include partner(stora-enso, 54px, auto);
+                @include partner(koda, 194px, auto);
+                @include partner(finance-estonia, 135px, auto);
+                @include partner(itfa, 78px, auto);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+    .partners{
+        .logotypes{
+            li{
+                flex: 0 0 33.33333%;
+                max-width: 33.33333%;
+                &.mob-full{
+                    flex: 0 0 33.33333%;
+                    max-width: 33.33333%;
+                }
+            }
+        }
+        .membership {
+            margin-top: 5rem;
+        }
+
+        .btn {
+            margin-top: 3rem;
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    .partners {
+        padding: 4.5rem 0;
+        h2, h3{
+            text-align: left;
+            padding: 0;
+        }
+        
+        .logotypes{
+            margin-bottom: 0;
+            li{
+                min-height: 92px;
+                margin-bottom: 0;
+                img{
+                    &.maanteeamet {
+                        width: 150px;
+                    }
+                    &.nordecon {
+                        width: 142px;
+                    }
+                    &.riigi-kinnisvara {
+                        width: 205px;
+                    }
+                    &.selver {
+                        width: 62px;
+                    }
+                    &.stora-enso {
+                        width: 64px;
+                    }
+;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+
+    .partners{
+        h2{
+            padding-bottom: 2rem;
+        }
+        .membership {
+            .logotypes{
+                li {
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                }
+            }
+        }
+        .logotypes{
+            li{
+                flex: 0 0 20%;
+                max-width: 20%;
+                &.mob-full{
+                    flex: 0 0 20%;
+                    max-width: 20%;
+                }
+            }
+        }
+
+    }
+
+}

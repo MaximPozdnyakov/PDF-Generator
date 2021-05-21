@@ -1,0 +1,19 @@
+.not-found {
+    display: flex;
+    min-height: 85vh;
+    flex-direction: row;
+    align-items: center;
+    background: $blue-lighter;
+    h2 {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        font-weight: 500;
+    }
+    p {
+        color: $grey-text;
+        line-height: 2rem;
+    }
+    .error {
+        max-width: 144px;
+    }
+}

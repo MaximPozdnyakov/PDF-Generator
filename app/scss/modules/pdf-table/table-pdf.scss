@@ -1,0 +1,49 @@
+.pdf-table{
+  padding: 47px 0 50px;
+  table{
+    width: 100%;
+  }
+  thead{
+    border-bottom: 1px solid $grey-mid;
+    th{
+      border-bottom: 1px solid $grey-mid;
+      text-transform: uppercase;
+      height: 22px;
+      line-height: 9px;
+      font-size: 8px;
+      padding: 0 5px;
+      &:first-of-type{
+        padding-left: 0;
+      }
+    }
+  }
+  tbody{
+    tr{
+      &:first-of-type{
+        td{
+          padding-top: 10px;
+        }
+      }
+    }
+    td{
+      height: 23px;
+      line-height: 14px;
+      font-size: 8px;
+      border-bottom: .5px solid $grey-mid;
+      padding: 0 5px;
+      &:first-of-type{
+        font-weight: 700;
+        padding-left: 0;
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .pdf-table{
+    tbody {
+      td{
+        line-height: 23px;
+      }
+    }
+  }
+}

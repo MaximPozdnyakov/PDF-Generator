@@ -1,0 +1,36 @@
+.pdf-identification{
+  .pdf-title{
+    margin-bottom: 14px;
+  }
+  .verification-wrap{
+    margin-bottom: 20px;
+    &__media{
+      margin-bottom: 0px;
+      a{
+        width: 72px;
+        height: 24px;
+      }
+      img{
+        width: 72px;
+        height: 24px;
+      }
+    }
+    a{
+      font-size: 10px;
+      line-height: 16px;
+      color: $blue-100;
+    }
+  }
+  .pdf-subtitle{
+    margin-bottom: 15px;
+  }
+  .identification-wrap{
+    margin-bottom: 48px;
+    .pdf-item{
+      width: 25%;
+    }
+  }
+  .identification-approved{
+    margin-top: 68px;
+  }
+}

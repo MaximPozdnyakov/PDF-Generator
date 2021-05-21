@@ -1,0 +1,103 @@
+.stepline {
+    h2{
+        padding-top: 4rem;
+        padding-bottom: 1.5rem;
+    }
+    .steps {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        li {
+            position: relative;
+            margin-bottom: 3rem;
+            height: 40px;
+            &:after, &:before{
+                content: '';
+                display: block;
+                width: 100%;
+                clear: both;
+            }
+            .number {
+                font-weight: 700;
+                line-height: 38px;
+                color: $white;
+                background: $blue;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -20px;
+                border-radius: 50%;
+                &:after{
+                    content: "";
+                    width: 3px;
+                    border-radius: 10px; 
+                    background: #e2ecf5;
+                    position: absolute;
+                    height: 100%;
+                    left: 50%;
+                    top: 100%;
+                    margin-top: 0.25rem;
+                    transform: translate(-1.5px);
+                }
+                &.end:after{
+                    content: inherit;
+                }
+            }
+            .desc {
+                width: 45%;
+                font-weight: 500;
+                font-size: 0.813rem;
+                text-align: right;
+                padding: 10px 20px 0px 0px;
+                &.right{
+                    text-align: left;
+                    float: right;
+                    padding: 10px 0px 0px 20px;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) { 
+    .stepline {
+        h2{
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+        }
+        .steps {
+            li {
+                .desc{
+                    font-size: 1rem;
+                }
+            }
+
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) { 
+    .stepline {
+        .steps {
+            margin-bottom: 4.5rem;
+            li {
+                .number {
+                    &:after{
+                        margin-top: .38rem;
+                    }
+                }
+                .desc{
+                    width: 47%;
+                    padding: 5px 20px 0 0;
+                    &.right{
+                        padding: 5px 0px 0px 20px;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,149 @@
+.calc{
+    background-color: $blue-lighter;
+    h2 {
+        padding-top: 3rem;
+        color: $blue;
+    }
+    .input-data{
+        padding-top: 1rem;
+    }
+    
+    form {
+        label {
+            text-transform: uppercase;
+            font-size: 0.813rem;
+        } 
+        input {
+            &.money {
+                color: $blue;
+                font-weight: 700;
+                font-size: 1.375rem;
+            }
+        }
+        .invoiceSlider {
+            background: $grey-mid;
+            border: 0;
+            box-shadow: inherit;
+            border-radius: 8px;
+            margin: 1rem 0rem 1.75rem;
+            height: 10px;
+            .noUi-connect{
+                background: $blue;               
+            }
+            .noUi-handle {
+                width: 32px;
+                height: 32px;
+                right: -16px;
+                top: -11px;
+                border: none;
+                border-radius: 50%;
+                background: $yellow;
+                &:before, &:after{
+                    border-right: 2px solid $blue;
+                    border-bottom: 2px solid $blue;
+                    content: '';
+                    position: absolute;
+                    width:  8px;
+                    height: 8px;
+                    background: inherit;
+                    left: 0;
+                    right: 0;
+                    top: 12px;
+                }
+                &:before{
+                    left: 8px;
+                    transform: rotate(135deg)
+                }
+                &:after{
+                    left: 16px;
+                    transform: rotate(-45deg)
+                }
+                &:focus{
+                    outline: inherit;
+                }
+            }
+        }
+    }
+    .result {
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+        font-size: 1.125rem;
+        p{
+            margin-bottom: .5rem;
+            .data {
+                font-weight: 700;
+                color: $green;
+            }
+        }
+        .focus{
+            font-weight: 700;
+            color: $blue;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+    $calc-width: 600px;
+    $form-group-width: 460px;
+    $input-width: 176px;
+    $input-right-margin: 5rem;
+    $result-width: 700px;
+    .calc {
+        h2{
+            padding-top: 4.25rem;
+        }
+        form {
+            input{
+                &.money{
+                    font-size: 1.222rem;
+                }
+                &.form-control{
+                    max-width: $input-width;
+                }
+            }
+            .form-group{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                max-width: $form-group-width;
+                label{
+                    font-size: 0.833rem;
+                    margin-bottom: 0;
+                }
+                &.col-6{
+                    flex: 0 0 100%;
+                    max-width: $form-group-width;
+                }
+                .input-group{
+                    max-width: $input-width;
+                    input{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .input-data{
+            padding-top: 3rem;
+            padding-bottom: .5rem;
+            max-width: $calc-width;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .result{ 
+            max-width: $result-width;
+            margin-right: auto;
+            margin-left: auto;
+            padding-bottom: 5rem;
+            .col-9{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+    }
+}

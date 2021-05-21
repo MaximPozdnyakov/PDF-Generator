@@ -1,0 +1,16 @@
+.pdf-agreement{
+  .pdf-title{
+    margin-bottom: 40px;
+  }
+  .agreement-wrap{
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+    .pdf-item{
+      width: 33.33333%;
+      margin-bottom: 30px;
+    }
+  }
+  .identification-approved{
+    margin-top: 20px;
+  }
+}

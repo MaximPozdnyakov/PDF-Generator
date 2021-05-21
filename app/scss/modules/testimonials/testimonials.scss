@@ -1,0 +1,78 @@
+.testimonials{
+    font-size: 1.125rem;
+    background-color: #F6F8FA;
+    background-image: url("../images/testimonial-background.png");
+    background-position: 5%;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    p {
+        line-height: 2rem;
+    }
+    b {
+        font-weight: 500;
+    }
+    @include icon(quotes, 49px, 43px, $yellow);
+    @include icon(user, 56px, 56px, $grey);
+
+    .carousel-item {
+        .row {
+            min-height: 520px;
+        }
+        .thumb-img{
+            display: none;
+        }
+    }
+    .carousel-indicators{
+        bottom: 5%;
+        li {
+            background-color: #bdbdbd;
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            border: inherit;
+            margin-right: 5px;
+            margin-left: 5px;
+            transition: all .125s ease-out;
+            &.active {
+                background-color: $blue;
+                width: 16px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .testimonials{
+        font-size: 1rem;
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        .carousel-item{
+            .row {
+                min-height: 456px;
+            }
+            .thumb-img{
+                display: block;
+                &.icon {
+                    background: $white;
+                    border-radius: 50%;
+                    svg{
+                        margin: 28px;
+                    }
+                }
+                img{
+                    width: 112px;
+                    height: auto;
+                    border-radius: 50%;
+                }
+            }
+            p {
+                text-align: left;
+                padding-left: 1.5rem;
+            }
+        }
+        .carousel-indicators{
+            bottom: 10%;
+        }
+    }
+}

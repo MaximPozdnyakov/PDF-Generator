@@ -1,0 +1,17 @@
+.description {
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
+    h2 {
+        padding-bottom: 1rem;
+    }
+    p{
+        text-align: justify;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .description{
+        padding-top: 4.25rem;
+        padding-bottom: 3.75rem;
+    }
+}

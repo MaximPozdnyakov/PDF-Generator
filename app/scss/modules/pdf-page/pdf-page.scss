@@ -1,0 +1,79 @@
+.pdf-page{
+  .pdf-title{
+    margin-bottom: 16px;
+  }
+  &__item{
+    margin-bottom: 25px;
+  }
+  &__item--title{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $dark;
+    margin-bottom: 2px;
+    .icon-check, .icon-cancel{
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      margin-right: 11px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      top: -2px;
+      .icon{
+        fill: $white;
+      }
+    }
+    .icon-check{
+      background: $green;
+      svg{
+        width: 11px;
+        height: 8px;
+      }
+    }
+    .icon-cancel{
+      background: $red;
+      svg{
+        width: 8px;
+        height: 8px;
+      }
+    }
+    span{
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      color: $dark;
+    }
+  }
+  &__item--description{
+    ul{
+      margin-bottom: 0;
+      padding-left: 34px;
+    }
+    li{
+      font-size: 13px;
+      line-height: 20px;
+      color: $dark;
+      display: inline-block;
+      margin-right: 4px;
+      &:first-of-type{
+        display: block;
+        margin-right: 0;
+      }
+      strong{
+        padding-left: 0;
+        display: inline-block;
+      }
+    }
+    strong{
+      padding-left: 34px;
+      font-size: 13px;
+      line-height: 20px;
+      color: $dark;
+      display: block;
+      margin-top: 1px;
+    }
+  }
+}

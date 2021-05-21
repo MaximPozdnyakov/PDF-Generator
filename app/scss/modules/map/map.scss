@@ -1,0 +1,72 @@
+.map {
+    .container-full {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    #map {
+        display: none;
+    }
+    
+    .contact-information {
+        padding-top: 3rem;
+        .card {
+            padding: 0 15px 0 15px;
+            .right{
+                background: url(../images/light-pattern.png),#007bff;
+                color: $white;
+            }
+            ul{
+                margin-top: 2rem;
+                margin-bottom: .5rem;
+                padding-left: 1rem;
+                li{
+                    padding-bottom: 1.5rem;
+                }
+            }
+        }
+        .heading {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $grey-border;
+            font-weight: 700;
+        }
+        ul {
+            .icon-text {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                span {
+                    margin-left: 10px;
+                }
+            }
+            .icon-text, .text{
+                padding-bottom: .3rem;
+            }
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .map{
+        position: relative;
+        #map {
+            height: 680px;
+            width: 100%;
+            display: block;
+        }
+        .contact-information {
+            padding-top: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            .card {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}

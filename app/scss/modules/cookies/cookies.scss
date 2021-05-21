@@ -1,0 +1,40 @@
+.cookies{
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: $white;
+    text-align: center;
+    font-size: 0.75rem;
+    border-top: 1px solid $grey-light;
+    &.open{
+        animation: fade_in_show 0.125s;
+        display: block;
+    }
+    &.closing{
+        animation: fade_in_hide 0.125s;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .cookies{
+        font-size: 0.889rem;
+        p {
+            margin-bottom: 0;
+        }
+        .btn{
+            margin-left: 2rem;
+        }
+        .row{
+            .col-12{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

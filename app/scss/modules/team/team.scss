@@ -1,0 +1,70 @@
+.team {
+    padding-bottom: 1rem;
+    background: #F6F8FA;
+    h2 {
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        .avatar{
+            width: 190px;
+            border-radius: 50%;
+            margin-bottom: 1.25rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .team-members {
+        margin-bottom: 1.5rem;
+    }
+
+    .member {
+        padding-bottom: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .avatar{
+            width: 120px;
+            border-radius: 50%;
+        }
+        .info {
+            padding-left: 1.125rem;
+            text-align: left;
+            h5{
+                padding-top: .5rem;
+                font-size: 1.333rem;
+                font-weight: 500;
+                margin-bottom: .125rem;
+            }
+            span{
+                font-size: 0.889rem;
+                font-weight: 500;
+                color: $grey-text;
+            }
+            .social{
+                margin-top: .25rem;
+                text-align: left;
+                padding: 0;
+                list-style: none;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .team {
+        h2 {
+            padding-bottom: 3.5rem;
+        }
+        .team-members {
+            margin-bottom: 3.5rem;
+        }
+    
+    }
+}
