@@ -4,7 +4,7 @@
   "description": "Supplierplus construction landing",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/app"
+    "server": "nodemon server/app"
   },
   "author": "Dmitri Korobko",
   "license": "ISC",
@@ -39,6 +39,9 @@
     "wnumb": "^1.2.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dateformat": "^4.5.1",
+    "express": "^4.17.1",
+    "html-pdf": "^3.0.1",
+    "node-html-parser": "^3.3.0"
   }
 }
