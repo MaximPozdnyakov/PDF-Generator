@@ -4,9 +4,25 @@
   }
   .iban-wrap{
     flex-wrap: wrap;
+    position: relative;
   }
   .pdf-item{
-    width: 50%;
+    width: 257.5px;
     margin-bottom: 35px;
+    @for $i from 1 through 7 {
+      @if $i % 2 == 0 {
+        &:nth-of-type(#{$i}) {
+          position: absolute;
+          left: 257.5px;
+          top: calc(#{$i - 2} * 38px);
+        }
+      } @else {
+        &:nth-of-type(#{$i}) {
+          position: absolute;
+          left: 0px;
+          top: calc(#{$i - 1} * 38px);
+        }
+      }
+    }
   }
 }

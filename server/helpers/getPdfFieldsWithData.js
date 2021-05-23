@@ -61,6 +61,14 @@ module.exports = (data) => {
     ["agreement_version", data.agreement_page && data.agreement_page.version],
     ["agreement_upload_at", data.agreement_page && data.agreement_page.upload_at],
     ["agreement_approved_at", data.agreement_page && data.agreement_page.approved_at],
+
+    ["iban_current", data.iban_page && data.iban_page.current],
+    ["iban_payment_description", data.iban_page && data.iban_page.payment_description],
+    ["iban_amount", data.iban_page && data.iban_page.amount],
+    ["iban_bank_name", data.iban_page && data.iban_page.bank_name],
+    ["iban_bank_address", data.iban_page && data.iban_page.bank_address],
+    ["iban_iban", data.iban_page && data.iban_page.iban],
+    ["iban_swift", data.iban_page && data.iban_page.swift],
   ];
 
   return fields;

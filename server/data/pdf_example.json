@@ -97,5 +97,14 @@
     "language": "RU",
     "version": "5",
     "upload_at": "2121-05-07 18:48"
+  },
+  "iban_page": {
+    "current": "Current Example",
+    "payment_description": "Profile verification",
+    "amount": "5 RUB",
+    "bank_name": "Example Bank Name",
+    "bank_address": "Random address",
+    "iban": "GSDFGJ4345GNS865",
+    "swift": "INCOMING"
   }
 }
