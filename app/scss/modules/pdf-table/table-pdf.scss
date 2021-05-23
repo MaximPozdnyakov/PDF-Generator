@@ -1,7 +1,7 @@
 .pdf-table{
   padding: 47px 0 50px;
   table{
-    width: 100%;
+    width: 515px;
   }
   thead{
     border-bottom: 1px solid $grey-mid;
@@ -19,10 +19,14 @@
   }
   tbody{
     tr{
+      height: 23.333333px;
+      border-bottom: 1px solid $grey-mid;
+      padding-bottom: 1px;
       &:first-of-type{
+        height: 36.333333px;
         td{
-          padding-top: 10px;
-        }
+            padding-top: 10px;
+          }
       }
     }
     td{

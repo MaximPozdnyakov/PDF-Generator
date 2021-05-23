@@ -9,66 +9,38 @@
     "incorporation_date": "2021-07-05",
     "activity": "Representative"
   },
-  "user": {
+  "representative": {
     "first_name": "Arek",
-    "last_name": "Test",
-    "status": "completed",
-    "position": "Member of the Board",
-    "email": "test@53asd.local",
-    "mobile_number": "123",
-    "national_id_number": "123456",
-    "approved_at": "2021-05-03T14:37:52.000+03:00"
+    "last_name": "Test"
   },
-  "spy_kyc": {
-      "status": "completed",
-      "first_name": "arek",
-      "last_name": "test",
-      "id_code": "123456",
-      "date_of_birth": "-",
-      "pep": [],
-      "document_country": "PL",
-      "document_type": "ID_CARD",
-      "serial_number": "-",
-      "document_expires_at": "-",
-      "screening_url": "https://supplierplus.test/spy_kyc/screenings/221",
-      "approved_at": "2021-05-03T14:56:30.000+03:00",
-      "attachments": [
-          {
-              "title": "Document-front",
-              "url": "https://supplierplus.test/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFh4Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a493e64ae1466bbafc9dc9ee2bdc351d88289fc7/document-front.jpeg"
-          }
-      ]
+  "company_name": {
+    "input": "Example Company",
+    "verified": "Example Company",
+    "verified_at": "2021-05-07 15:42",
+    "decision": "Example Company"
   },
-  "terms_of_service": {
-      "status": "pending",
-      "terms": [
-          {
-              "kind": "supplier_agreement",
-              "file_hash": "3c57faf6e86b4bdb1cfca497567c995b529634e1ea898bba90046ea6a33175d08502b9f7dfd3f6b97d49a28b3ec44ea65eeb0ae1a9abc98f2caecf5961b7df91",
-              "language": "en",
-              "version": 7,
-              "created_at": "2021-02-01T13:42:35.000+02:00"
-          }
-      ],
-      "approved_at": null
+  "representative_name": {
+    "input": "Example Company",
+    "verified": "Example Company",
+    "verified_at": "2021-05-07 15:42",
+    "decision": "Example Company"
   },
-  "payment": {
-      "status": "not_completed",
-      "current": "SupplierPlus OÜ",
-      "amount": "1.0000 EUR",
-      "bank_name": "Incoming Bank Name",
-      "address": "5th Avenue 12345",
-      "iban": "GB27TGWC40671450339766",
-      "swift": "INCOMING_SWIFT",
-      "approved_at": null
+  "verification_full_name": {
+    "input": "Example Company",
+    "verified": "Example Company",
+    "verified_at": "2021-05-07 15:42",
+    "decision": "Example Company"
   },
-  "questionnaire": {
-      "status": "not_completed",
-      "approved_at": null
+  "agreement_kind": {
+    "input": "Example Company",
+    "verified": "Example Company",
+    "verified_at": "2021-05-07 15:42",
+    "decision": "Example Company"
   },
-  "company_check": {
-      "status": "pending",
-      "approved_at": null,
-      "screenings": []
+  "bank_name": {
+    "input": "Example Bank",
+    "verified": "Example Bank",
+    "verified_at": "2021-05-07 12:42",
+    "decision": "Example Bank"
   }
 }

@@ -12,11 +12,11 @@
         }
     }
     &.header-page{
-        padding: 19px 27px 0 29px;
+        padding: 19px 40px 0 40px;
         max-width: 595px;
-        margin: 0 auto;
         .container{
-            padding: 0 11px;
+            padding: 0 0px;
+            width: 515px;
         }
         nav{
             display: flex;
@@ -24,6 +24,7 @@
             align-items: center;
             padding-bottom: 13px;
             border-bottom: 2px solid $blue-100;
+            width: 515px;
         }
         .navbar-logo{
             img{
@@ -45,6 +46,10 @@
                 font-size: 11px;
                 line-height: 24px;
                 color: $dark;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: none;
+                }
             }
         }
     }

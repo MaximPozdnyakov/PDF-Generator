@@ -3,6 +3,7 @@
         padding: 0 45px 0 40px;
     }
     .footer-nav{
+        width: 515px;
         &__list{
             display: flex;
             flex-wrap: wrap;
@@ -32,7 +33,6 @@
 
 .footer-page{
     max-width: 595px;
-    margin: 0 auto;
     .container {
         padding: 0 40px;
     }
