@@ -22,43 +22,40 @@ const insertTextToHTML = (parsedHtml, elementClass, text) => {
   } catch (e) {}
 };
 
-const renderCompanyPage = (data, parsedHtml, fields) => {
+const makePageUnapproved = (parsedHtml, pageName) => {
   try {
-    fields.forEach((field) => {
-      if (
-        !(
-          data.company_page &&
-          data.company_page[field] &&
-          data.company_page[field].status == "ok"
-        )
-      ) {
-        parsedHtml.querySelectorAll(`.${field}_status`).forEach((el) => {
-          el.classList.replace(`icon-check ${field}_status`, "icon-cancel");
-        });
-        parsedHtml.querySelectorAll(`.${field}_icon`).forEach((el) => {
-          el.setAttribute("xlink:href", "#icon-cross");
-        });
-      }
+    parsedHtml.querySelectorAll(`.${pageName}_status`).forEach((el) => {
+      el.classList.replace(`icon-check ${pageName}_status`, "icon-cancel");
+    });
+    parsedHtml.querySelectorAll(`.${pageName}_icon`).forEach((el) => {
+      el.setAttribute("xlink:href", "#icon-cross");
+    });
+    parsedHtml.querySelectorAll(`.${pageName}_status_text`).forEach((el) => {
+      el.innerHTML = "Unapproved";
+      el.setAttribute("style", "color: #F05A5C;");
     });
   } catch (e) {}
+};
+
+const renderCompanyPage = (data, parsedHtml, fields) => {
+  fields.forEach((field) => {
+    if (
+      !(
+        data.company_page &&
+        data.company_page[field] &&
+        data.company_page[field].status == "ok"
+      )
+    ) {
+      makePageUnapproved(parsedHtml, field);
+    }
+  });
 };
 
 const renderIdentificationPage = (data, parsedHtml) => {
   try {
     const { identification_page: page } = data;
     if (!(page && page.status == "ok")) {
-      parsedHtml.querySelectorAll(".identification_status").forEach((el) => {
-        el.classList.replace("icon-check identification_status", "icon-cancel");
-      });
-      parsedHtml.querySelectorAll(".identification_icon").forEach((el) => {
-        el.setAttribute("xlink:href", "#icon-cross");
-      });
-      parsedHtml
-        .querySelectorAll(".identification_status_text")
-        .forEach((el) => {
-          el.innerHTML = "Unapproved";
-          el.setAttribute("style", "color: #F05A5C;");
-        });
+      makePageUnapproved(parsedHtml, "identification");
     }
     parsedHtml.querySelectorAll(".identification_veriff_link").forEach((el) => {
       el.setAttribute("href", page ? page.veriff_link || "-" : "-");
@@ -91,6 +88,13 @@ const renderAttachmentPage = (data, parsedHtml) => {
   } catch (e) {}
 };
 
+const renderAgreementPage = (data, parsedHtml) => {
+  const { agreement_page: page } = data;
+  if (!(page && page.status == "ok")) {
+    makePageUnapproved(parsedHtml, "agreement");
+  }
+};
+
 router.get("/", (req, res) => {
   const parsedHtml = parse(html);
 
@@ -106,6 +110,7 @@ router.get("/", (req, res) => {
   ]);
   renderIdentificationPage(exampleData, parsedHtml);
   renderAttachmentPage(exampleData, parsedHtml);
+  renderAgreementPage(exampleData, parsedHtml);
 
   pdf
     .create(parsedHtml.toString(), pdfOptions)

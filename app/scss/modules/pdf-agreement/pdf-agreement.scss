@@ -5,9 +5,21 @@
   .agreement-wrap{
     flex-wrap: wrap;
     margin-bottom: 38px;
+    position: relative;
+    height: 142px;
     .pdf-item{
-      width: 33.33333%;
+      width: 171.65px;
       margin-bottom: 30px;
+      &:nth-of-type(4) {
+        position: absolute;
+        top: 71px;
+        left: 0px;
+      }
+      &:nth-of-type(5) {
+        position: absolute;
+        top: 71px;
+        left: 171.65px;
+      }
     }
   }
   .identification-approved{

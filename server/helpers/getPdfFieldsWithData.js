@@ -54,6 +54,13 @@ module.exports = (data) => {
     ["document_type", data.identification_page && data.identification_page.document && data.identification_page.document.type],
     ["document_serial", data.identification_page && data.identification_page.document && data.identification_page.document.serial],
     ["document_expires_at", data.identification_page && data.identification_page.document && data.identification_page.document.expires_at],
+
+    ["agreement_document_type", data.agreement_page && data.agreement_page.document_type],
+    ["agreement_hash", data.agreement_page && data.agreement_page.hash],
+    ["agreement_language", data.agreement_page && data.agreement_page.language],
+    ["agreement_version", data.agreement_page && data.agreement_page.version],
+    ["agreement_upload_at", data.agreement_page && data.agreement_page.upload_at],
+    ["agreement_approved_at", data.agreement_page && data.agreement_page.approved_at],
   ];
 
   return fields;

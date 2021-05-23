@@ -6,7 +6,7 @@
     "approved_at": "2021-05-07",
     "country": "Russia",
     "address": "3016 Joseph Street",
-    "incorporation_date": "2021-07-05",
+    "incorporation_at": "2021-07-05",
     "activity": "Representative"
   },
   "representative": {
@@ -73,7 +73,7 @@
       "first_name": "Peter",
       "last_name": "Parker",
       "id": "17025338604",
-      "birth_date": "1921-14-01"
+      "birth_at": "1921-14-01"
     },
     "document": {
       "country": "Poland",
@@ -88,5 +88,14 @@
       "images/attachments-item-1.jpg"
     ],
     "face": "images/testimonial.jpg"
+  },
+  "agreement_page": {
+    "status": "no",
+    "approved_at": "2021-05-07 18:48",
+    "document_type": "agreement",
+    "hash": "sd45ls74dnk",
+    "language": "RU",
+    "version": "5",
+    "upload_at": "2121-05-07 18:48"
   }
 }
