@@ -163,8 +163,12 @@
     font-size: 22px;
     line-height: 28px;
     font-weight: 600;
+    position: relative;
     &.approved-check {
       color: $green;
+    }
+    &.approved-cancel {
+      color: $red;
     }
     .icon-check,
     .icon-cancel {
@@ -177,9 +181,12 @@
       align-items: center;
       flex-direction: column;
       position: relative;
-      top: -3px;
+      top: 3px;
       .icon {
         fill: $white;
+        position: absolute;
+        top: 7px;
+        left: 5.5px;
       }
     }
     .icon-check {
@@ -191,6 +198,9 @@
     }
     .icon-cancel {
       background: $red;
+      .icon {
+        left: 7px;
+      }
       svg {
         width: 8px;
         height: 8px;

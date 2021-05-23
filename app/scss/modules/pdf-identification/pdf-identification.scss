@@ -19,12 +19,18 @@
       font-size: 10px;
       line-height: 16px;
       color: $blue-100;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   .pdf-subtitle{
     margin-bottom: 15px;
+    width: 515px;
   }
   .identification-wrap{
+    width: 515px;
     margin-bottom: 48px;
     .pdf-item{
       width: 25%;

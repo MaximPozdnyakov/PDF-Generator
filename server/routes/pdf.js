@@ -34,14 +34,26 @@ const renderCompanyPage = (data, parsedHtml, fields) => {
       parsedHtml.querySelectorAll(`.${field}_status`).forEach((el) => {
         el.classList.replace(`icon-check ${field}_status`, "icon-cancel");
       });
-      parsedHtml.querySelectorAll(`.${field}_description`).forEach((el) => {
-        el.classList.replace(`${field}_description`, "hidden");
-      });
       parsedHtml.querySelectorAll(`.${field}_icon`).forEach((el) => {
         el.setAttribute("xlink:href", "#icon-cross");
       });
     }
   });
+};
+
+const renderIdentificationPage = (data, parsedHtml) => {
+  if (!(data.identification_page && data.identification_page.status == "ok")) {
+    parsedHtml.querySelectorAll(".identification_status").forEach((el) => {
+      el.classList.replace("icon-check identification_status", "icon-cancel");
+    });
+    parsedHtml.querySelectorAll(".identification_icon").forEach((el) => {
+      el.setAttribute("xlink:href", "#icon-cross");
+    });
+    parsedHtml.querySelectorAll(".identification_status_text").forEach((el) => {
+      el.innerHTML = "Unapproved";
+      el.setAttribute("style", "color: #F05A5C;");
+    });
+  }
 };
 
 router.get("/", (req, res) => {
@@ -57,6 +69,7 @@ router.get("/", (req, res) => {
     "name_check",
     "status_check",
   ]);
+  renderIdentificationPage(exampleData, parsedHtml);
 
   pdf
     .create(parsedHtml.toString(), pdfOptions)
