@@ -7,7 +7,7 @@ const pdfOptions = {
   base: "http://localhost:3000/",
 };
 const { parse } = require("node-html-parser");
-const getPdfData = require("../helpers/getPdfData");
+const getPdfFieldsWithData = require("../helpers/getPdfFieldsWithData");
 
 const html = fs.readFileSync("dist/pdf-full.html", "utf8");
 const exampleData = JSON.parse(
@@ -22,13 +22,41 @@ const insertTextToHTML = (parsedHtml, elementClass, text) => {
   } catch (e) {}
 };
 
+const renderCompanyPage = (data, parsedHtml, fields) => {
+  fields.forEach((field) => {
+    if (
+      !(
+        data.company_page &&
+        data.company_page[field] &&
+        data.company_page[field].status == "ok"
+      )
+    ) {
+      parsedHtml.querySelectorAll(`.${field}_status`).forEach((el) => {
+        el.classList.replace(`icon-check ${field}_status`, "icon-cancel");
+      });
+      parsedHtml.querySelectorAll(`.${field}_description`).forEach((el) => {
+        el.classList.replace(`${field}_description`, "hidden");
+      });
+      parsedHtml.querySelectorAll(`.${field}_icon`).forEach((el) => {
+        el.setAttribute("xlink:href", "#icon-cross");
+      });
+    }
+  });
+};
+
 router.get("/", (req, res) => {
   const parsedHtml = parse(html);
 
-  const fields = getPdfData(exampleData);
-  fields.forEach(([elementId, text]) =>
+  const fieldsWithData = getPdfFieldsWithData(exampleData);
+  fieldsWithData.forEach(([elementId, text]) =>
     insertTextToHTML(parsedHtml, elementId, text)
   );
+
+  renderCompanyPage(exampleData, parsedHtml, [
+    "reg_code_check",
+    "name_check",
+    "status_check",
+  ]);
 
   pdf
     .create(parsedHtml.toString(), pdfOptions)

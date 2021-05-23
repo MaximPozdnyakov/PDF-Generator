@@ -42,5 +42,27 @@
     "verified": "Example Bank",
     "verified_at": "2021-05-07 12:42",
     "decision": "Example Bank"
+  },
+  "company_page": {
+    "reg_code_check": {
+      "status": "ok",
+      "approved_at": "2021-05-07 18:48",
+      "input": "15679142",
+      "found": "15679142",
+      "comment": "Legal entity is registered and active in the business register"
+    },
+    "name_check": {
+      "status": "ok",
+      "approved_at": "2021-05-07 18:48",
+      "input": "Example Company",
+      "found": "Example Company",
+      "comment": "Legal entity is registered and active in the business register"
+    },
+    "status_check": {
+      "status": "no",
+      "approved_at": "2021-05-07 18:48",
+      "state": "Not Live",
+      "comment": "Matching whether the registration code exists in the selected country"
+    }
   }
 }
