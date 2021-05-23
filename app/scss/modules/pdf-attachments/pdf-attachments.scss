@@ -5,12 +5,20 @@
   .attachments-wrap{
     display: flex;
     flex-wrap: wrap;
+    position: relative;
   }
   .attachments-item{
-    width: 50%;
+    width: 257.5px;
     margin-bottom: 46px;
+    &:nth-of-type(2) {
+      position: absolute;
+      left: 264px;
+    }
     &:last-of-type{
       margin-bottom: 30px;
+      position: absolute;
+      left: 0;
+      top: 303px;
     }
     &__title{
       font-family: 'Montserrat', sans-serif;

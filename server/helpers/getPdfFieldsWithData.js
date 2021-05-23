@@ -44,16 +44,16 @@ module.exports = (data) => {
     ...getTableFieldsWithData(data, ["company_name", "representative_name", "verification_full_name", "agreement_kind", "bank_name"]),
     ...getCompanyPageFieldsWithData(data, ["reg_code_check", "name_check", "status_check"]),
 
-    ["identification_veriff_link", data.identification_page.veriff_link],
-    ["identification_verified_at", data.identification_page.verified_at],
-    ["personal_first_name", data.identification_page.personal.first_name],
-    ["personal_last_name", data.identification_page.personal.last_name],
-    ["personal_id", data.identification_page.personal.id],
-    ["personal_birth_date", data.identification_page.personal.birth_date],
-    ["document_country", data.identification_page.document.country],
-    ["document_type", data.identification_page.document.type],
-    ["document_serial", data.identification_page.document.serial],
-    ["document_expires_at", data.identification_page.document.expires_at],
+    ["identification_veriff_link", data.identification_page && data.identification_page.veriff_link],
+    ["identification_verified_at", data.identification_page && data.identification_page.verified_at],
+    ["personal_first_name", data.identification_page && data.identification_page.personal && data.identification_page.personal.first_name],
+    ["personal_last_name", data.identification_page && data.identification_page.personal && data.identification_page.personal.last_name],
+    ["personal_id", data.identification_page && data.identification_page.personal && data.identification_page.personal.id],
+    ["personal_birth_date", data.identification_page && data.identification_page.personal && data.identification_page.personal.birth_date],
+    ["document_country", data.identification_page && data.identification_page.document && data.identification_page.document.country],
+    ["document_type", data.identification_page && data.identification_page.document && data.identification_page.document.type],
+    ["document_serial", data.identification_page && data.identification_page.document && data.identification_page.document.serial],
+    ["document_expires_at", data.identification_page && data.identification_page.document && data.identification_page.document.expires_at],
   ];
 
   return fields;

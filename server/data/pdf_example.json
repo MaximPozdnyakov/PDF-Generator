@@ -67,7 +67,7 @@
   },
   "identification_page": {
     "status": "no",
-    "veriff_link": "Http://station.veriff.com/verification/bc16-0a366fc75e099d38c9-b74a-44e1",
+    "veriff_link": "http://station.veriff.com/verification/bc16-0a366fc75e099d38c9-b74a-44e1",
     "verified_at": "2021-14-01 08:42",
     "personal": {
       "first_name": "Peter",
@@ -81,5 +81,12 @@
       "serial": "56781234",
       "expires_at": "2221-14-01"
     }
+  },
+  "attachment_page": {
+    "document": [
+      "images/attachments-item-2.jpg",
+      "images/attachments-item-1.jpg"
+    ],
+    "face": "images/testimonial.jpg"
   }
 }
