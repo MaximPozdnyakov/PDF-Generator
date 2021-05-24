@@ -7,7 +7,7 @@ const pdfOptions = {
   base: "http://localhost:3000/",
 };
 const { parse } = require("node-html-parser");
-const getPdfFieldsWithData = require("../helpers/getPdfFieldsWithData");
+const getPdfTextData = require("../helpers/getPdfTextData");
 
 const html = fs.readFileSync("dist/pdf-full.html", "utf8");
 const exampleData = JSON.parse(
@@ -22,7 +22,11 @@ const insertTextToHTML = (parsedHtml, elementClass, text) => {
   } catch (e) {}
 };
 
-const makePageUnapproved = (parsedHtml, pageName) => {
+const makePageUnapproved = (
+  parsedHtml,
+  pageName,
+  statusText = "Unapproved"
+) => {
   try {
     parsedHtml.querySelectorAll(`.${pageName}_status`).forEach((el) => {
       el.classList.replace(`icon-check ${pageName}_status`, "icon-cancel");
@@ -31,7 +35,7 @@ const makePageUnapproved = (parsedHtml, pageName) => {
       el.setAttribute("xlink:href", "#icon-cross");
     });
     parsedHtml.querySelectorAll(`.${pageName}_status_text`).forEach((el) => {
-      el.innerHTML = "Unapproved";
+      el.innerHTML = statusText;
       el.setAttribute("style", "color: #F05A5C;");
     });
   } catch (e) {}
@@ -95,34 +99,46 @@ const renderAgreementPage = (data, parsedHtml) => {
   }
 };
 
-router.get("/", (req, res) => {
-  const parsedHtml = parse(html);
+const renderAmlPage = (data, parsedHtml) => {
+  const { aml_page: page } = data;
+  if (!(page && page.status == "ok")) {
+    makePageUnapproved(parsedHtml, "aml", "Incomplete");
+  }
+};
 
-  const fieldsWithData = getPdfFieldsWithData(exampleData);
-  fieldsWithData.forEach(([elementId, text]) =>
-    insertTextToHTML(parsedHtml, elementId, text)
-  );
+router.post("/", (req, res) => {
+  try {
+    const pdfData = Object.keys(req.body).length ? req.body : exampleData;
 
-  renderCompanyPage(exampleData, parsedHtml, [
-    "reg_code_check",
-    "name_check",
-    "status_check",
-  ]);
-  renderIdentificationPage(exampleData, parsedHtml);
-  renderAttachmentPage(exampleData, parsedHtml);
-  renderAgreementPage(exampleData, parsedHtml);
+    const parsedHtml = parse(html);
 
-  pdf
-    .create(parsedHtml.toString(), pdfOptions)
-    .toStream(function (err, stream) {
-      if (err) return console.log(err);
-      res.setHeader("Content-Type", "application/pdf");
-      res.setHeader(
-        "Content-Disposition",
-        "attachment; filename=SupplierProfile.pdf"
-      );
-      stream.pipe(res);
-    });
+    const fieldsWithData = getPdfTextData(pdfData);
+    fieldsWithData.forEach(([elementId, text]) =>
+      insertTextToHTML(parsedHtml, elementId, text)
+    );
+
+    renderCompanyPage(pdfData, parsedHtml, [
+      "reg_code_check",
+      "name_check",
+      "status_check",
+    ]);
+    renderIdentificationPage(pdfData, parsedHtml);
+    renderAttachmentPage(pdfData, parsedHtml);
+    renderAgreementPage(pdfData, parsedHtml);
+    renderAmlPage(pdfData, parsedHtml);
+
+    pdf
+      .create(parsedHtml.toString(), pdfOptions)
+      .toStream(function (err, stream) {
+        if (err) return console.log(err);
+        res.setHeader("Content-Type", "application/pdf");
+        res.setHeader(
+          "Content-Disposition",
+          "attachment; filename=SupplierProfile.pdf"
+        );
+        stream.pipe(res);
+      });
+  } catch (e) {}
 });
 
 module.exports = router;

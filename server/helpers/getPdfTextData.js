@@ -1,4 +1,4 @@
-const getTableFieldsWithData = (data, fields) => {
+const getTableTextData = (data, fields) => {
   let fieldsWithData = []
   fields.map((field) => {
     fieldsWithData.push([`${field}_input`, data[field] && data[field].input]);
@@ -9,7 +9,7 @@ const getTableFieldsWithData = (data, fields) => {
   return fieldsWithData;
 }
 
-const getCompanyPageFieldsWithData = (data, fields) => {
+const getCompanyPageTextData = (data, fields) => {
   let fieldsWithData = []
   fields.map((field) => {
     fieldsWithData.push([`${field}_approved_at`, data.company_page && data.company_page[field] && data.company_page[field].approved_at]);
@@ -34,15 +34,16 @@ module.exports = (data) => {
     ["company_approved_at", company && company.approved_at],
     ["company_country", company && company.country],
     ["company_address", company && company.address],
-    ["company_incorporation_date", company && company.incorporation_date],
+    ["company_incorporation_date", company && company.incorporation_at],
+    ["company_activity", company && company.activity],
   
     [
       "user_full_name",
       representative && `${representative.first_name} ${representative.last_name}`,
     ],
 
-    ...getTableFieldsWithData(data, ["company_name", "representative_name", "verification_full_name", "agreement_kind", "bank_name"]),
-    ...getCompanyPageFieldsWithData(data, ["reg_code_check", "name_check", "status_check"]),
+    ...getTableTextData(data, ["company_name", "representative_name", "verification_full_name", "agreement_kind", "bank_name"]),
+    ...getCompanyPageTextData(data, ["reg_code_check", "name_check", "status_check"]),
 
     ["identification_veriff_link", data.identification_page && data.identification_page.veriff_link],
     ["identification_verified_at", data.identification_page && data.identification_page.verified_at],
@@ -69,6 +70,22 @@ module.exports = (data) => {
     ["iban_bank_address", data.iban_page && data.iban_page.bank_address],
     ["iban_iban", data.iban_page && data.iban_page.iban],
     ["iban_swift", data.iban_page && data.iban_page.swift],
+
+    ["aml_completed_at", data.aml_page && data.aml_page.completed_at],
+    ["aml_principal_activity_code", data.aml_page && data.aml_page.principal_activity_code],
+    ["aml_activity_area", data.aml_page && data.aml_page.activity_area],
+    ["aml_tax_residency", data.aml_page && data.aml_page.tax_residency],
+    ["aml_reg_code", data.aml_page && data.aml_page.reg_code],
+    ["aml_company_website", data.aml_page && data.aml_page.company_website],
+    ["aml_company_ownership", data.aml_page && data.aml_page.company_ownership],
+    ["aml_countries", data.aml_page && data.aml_page.countries],
+    ["aml_employees_number", data.aml_page && data.aml_page.employees_number],
+    ["aml_is_politically_exposed", data.aml_page && data.aml_page.is_politically_exposed],
+    ["aml_representative_full_name", data.aml_page && data.aml_page.representative_full_name],
+    ["aml_representative_position", data.aml_page && data.aml_page.representative_position],
+    ["aml_representative_country", data.aml_page && data.aml_page.representative_country],
+    ["aml_id", data.aml_page && data.aml_page.id],
+    ["aml_vat", data.aml_page && data.aml_page.vat],
   ];
 
   return fields;

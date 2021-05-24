@@ -8,15 +8,55 @@
   .aml-wrap{
     flex-wrap: wrap;
     margin-bottom: 43px;
+    position: relative;
+    height: 424px;
   }
   .pdf-item{
-    width: 33.33330%;
+    width: 171.65px;
     margin-bottom: 19px;
     box-sizing: border-box;
     padding-right: 5px;
     &__title{
       margin-bottom: 5px;
       max-width: 94%;
+    }
+    @for $i from 1 through 15 {
+      @if $i % 3 == 1 {
+        &:nth-of-type(#{$i}) {
+          position: absolute;
+          left: 0;
+        }
+      } @else if $i % 3 == 2 {
+        &:nth-of-type(#{$i}) {
+          position: absolute;
+          left: 171.65px;
+        }
+      } @else {
+        &:nth-of-type(#{$i}) {
+          position: absolute;
+          left: 343.3px;
+        }
+      }
+    }
+    @for $i from 4 through 6 {
+      &:nth-of-type(#{$i}) {
+        top: 72px;
+      }
+    }
+    @for $i from 7 through 9 {
+      &:nth-of-type(#{$i}) {
+        top: 176px;
+      }
+    }
+    @for $i from 10 through 12 {
+      &:nth-of-type(#{$i}) {
+        top: 312px;
+      }
+    }
+    @for $i from 13 through 15 {
+      &:nth-of-type(#{$i}) {
+        top: 368px;
+      }
     }
   }
 }

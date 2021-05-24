@@ -106,5 +106,23 @@
     "bank_address": "Random address",
     "iban": "GSDFGJ4345GNS865",
     "swift": "INCOMING"
+  },
+  "aml_page": {
+    "status": "no",
+    "completed_at": "2121-05-07 18:48",
+    "principal_activity_code": "Russia",
+    "activity_area": "Russia",
+    "tax_residency": "Russia",
+    "reg_code": "253623",
+    "company_website": "www.google.com",
+    "company_ownership": "Google - 100%",
+    "countries": "Russia",
+    "employees_number": "10-20",
+    "is_politically_exposed": "yes",
+    "representative_full_name": "Jake Person",
+    "representative_position": "Owner",
+    "representative_country": "Russia",
+    "id": "28635629",
+    "vat": "FDDDDDD124"
   }
 }
