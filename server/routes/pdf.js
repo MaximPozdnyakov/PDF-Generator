@@ -2,12 +2,13 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const pdf = require("html-pdf");
-const pdfOptions = {
-  format: "A4",
-  base: "http://localhost:3000/",
-};
 const { parse } = require("node-html-parser");
 const getPdfTextData = require("../helpers/getPdfTextData");
+
+const pdfOptions = {
+  format: "A4",
+  base: `http:localhost:${process.env.PORT || 5000}/`,
+};
 
 const html = fs.readFileSync("dist/pdf-full.html", "utf8");
 const exampleData = JSON.parse(
